@@ -1,0 +1,7 @@
+{
+  "name": "gluiMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
