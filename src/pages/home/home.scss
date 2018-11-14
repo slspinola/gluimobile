@@ -1,3 +1,32 @@
 page-home {
+  
+  ion-content{
+    text-align: center;
+    vertical-align: center;
+    button {
+      div{
+        ion-icon {
+          font-size: 3em;
+          padding-bottom: 5px;
+        }
+      }
+      width: 45%;
+      height: 22%!important;
+    }
+  }
 
+  ion-footer {
+    text-align: center;
+    .toolbar-background-md{
+      text-align: center;
+      background-color: black;
+    }
+    
+    .toolbar-title-md{
+      font-size: 1.0em;
+      color: white;
+      background-color: black;
+    }
+  }
+  
 }

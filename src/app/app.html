@@ -1,14 +1,22 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+
+      <ion-title>
+        <img src="assets/imgs/logo.png" height="30" width="auto"/>
+          GLUi Menu
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
-    <ion-list>
+    <ion-list class="image-section">
+        <img class="menu-image" src="assets/imgs/cmevora.jpg" alt="">
+    </ion-list>
+    <ion-list padding>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+          <ion-icon name="{{p.icon}}"></ion-icon>
+          {{p.title}}
       </button>
     </ion-list>
   </ion-content>

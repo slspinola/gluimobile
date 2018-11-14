@@ -14,3 +14,19 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.image-section{
+  text-align: center;
+  .menu-image {
+    margin: 10px 0 10px 0px;
+    width: 70%;
+  }
+  
+}
+
+.toolbar-background-mdd {
+  border-color: #b2b2b2;
+  background: #141414;
+  color: white!important
+
+
+}
