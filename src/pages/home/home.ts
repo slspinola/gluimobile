@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TasksPage } from '../tasks/tasks';
+import { EventsPage } from '../events/events';
+import { AuthProvider } from '../../providers/auth/auth';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +10,39 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  uid: string;
 
+  pages = [
+    { title: 'Serviços', icon:'list-box', component: TasksPage },
+    { title: 'Ocorrências', icon:'pricetags', component: EventsPage },
+    { title: 'Recolha', icon:'trash', component: HomePage },
+    { title: 'Nivel Enchimento', icon:'pint', component: HomePage },
+    { title: 'Varredura', icon:'leaf', component: HomePage },
+    { title: 'Manutenção', icon:'construct', component: HomePage },
+    { title: 'Sarjetas', icon:'grid', component: HomePage },
+
+  ];
+
+  constructor(public navCtrl: NavController, private authService: AuthProvider) {
+    this.authService.user.subscribe(
+      user => {
+        console.log(user.uid);
+        this.uid = user.uid
+        this.authService.getProfile().subscribe(
+          profile => {
+            console.log(profile[0]);
+            this.uid = profile[0].id
+          })
+      })
+  }
+
+  navigateTo(page: any): void {
+    //this.navCtrl.push(TasksPage, {});
+    this.navCtrl.push(page.component, {uid: this.uid});
+  }
+
+  getUser(): void {
+    
   }
 
 }

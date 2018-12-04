@@ -1,0 +1,28 @@
+page-tasks {
+  
+  .play {
+    background-color: blue;
+    width: 100%;
+  }
+
+  .pause {
+    background-color: orange;
+    width: 100%;
+  }
+
+  .done {
+    width: 100%;
+  }
+  .done-all {
+    color: green;
+  }
+  .executing {
+    color: blue;
+  }
+  .scheduled {
+    color: orange;
+  }
+  .blocked {
+    color: red;
+  }
+}

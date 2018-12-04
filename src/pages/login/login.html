@@ -1,0 +1,24 @@
+
+<ion-grid>
+	<ion-row justify-content-center>
+		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+			<div text-center>
+          <img src="assets/imgs/logo.png" height="200" width="auto"/>
+				<h4>GLUi</h4>
+			</div>
+			<div padding [formGroup]="loginForm">
+				<ion-item>
+					<ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+				</ion-item>
+			</div>
+
+			<div padding>
+				<button ion-button (click)="login()" full>Login</button>
+			</div>
+		</ion-col>
+	</ion-row>
+</ion-grid>

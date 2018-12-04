@@ -8,56 +8,15 @@
 </ion-header>
 
 <ion-content padding>
-    <button ion-button>
+    <button ion-button *ngFor="let page of pages" (click)="navigateTo(page)">
       <div>
-        <ion-icon name="list-box"></ion-icon>
+        <ion-icon name="{{page.icon}}"></ion-icon>
         <br>
-        <label>Serviços</label>
+        <label>{{page.title}}</label>
       </div>
       </button>
-    <button ion-button>
-        <div>
-            <ion-icon name="pricetags"></ion-icon>
-            <br>
-            <label>Ocorrências</label>
-          </div>
-    </button>
-    <button ion-button>
-        <div>
-            <ion-icon name="trash"></ion-icon>
-            <br>
-            <label>Recolha</label>
-          </div>
-      </button>
-    <button ion-button>
-        <div>
-            <ion-icon name="pint"></ion-icon>
-            <br>
-            <label>Nivel Enchimento</label>
-          </div>
-    </button>
-    <button ion-button>
-        <div>
-            <ion-icon name="leaf"></ion-icon>
-            <br>
-            <label>Varredura</label>
-          </div>
-    </button>
-    <button ion-button>
-        <div>
-            <ion-icon name="construct"></ion-icon>
-            <br>
-            <label>Manutenção</label>
-          </div>
-    </button>
-    <button ion-button>
-        <div>
-            <ion-icon name="grid"></ion-icon>
-            <br>
-            <label>Sarjetas</label>
-          </div>
-    </button>
-  <button ion-button secondary menuToggle> Menu</button>
+  <!--<button ion-button secondary menuToggle> Menu</button>-->
+  <button ion-button secondary (click)="getUser()"> GET USER</button>
 </ion-content>
 <ion-footer color="dark">
     <ion-toolbar>
