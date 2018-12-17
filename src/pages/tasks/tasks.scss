@@ -25,4 +25,24 @@ page-tasks {
   .blocked {
     color: red;
   }
+  .spinner-section {
+    position: relative;
+    height: 100%;
+    background-color: rgba(68, 68, 68, 0.37);
+    .spinner {
+      padding-left: 35%;
+      padding-top: 25%;
+      ion-spinner * {
+        width: 108px;
+        height: 108px;
+        stroke: green;
+        fill: green;
+      }
+    }
+    .spinner-text {
+      padding-left: 22%;
+      padding-top: 20%;
+      color: green;
+    }
+  }
 }

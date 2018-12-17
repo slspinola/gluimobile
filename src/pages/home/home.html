@@ -8,6 +8,10 @@
 </ion-header>
 
 <ion-content padding>
+    <div *ngIf="errorMsg">
+        <p>{{errorMsg}}</p>
+      </div>
+      <p>Olá {{username}}</p>
     <button ion-button *ngFor="let page of pages" (click)="navigateTo(page)">
       <div>
         <ion-icon name="{{page.icon}}"></ion-icon>

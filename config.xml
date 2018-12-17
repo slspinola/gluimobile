@@ -76,11 +76,17 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
-    <engine name="android" spec="^6.2.3" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
+    <plugin name="cordova-plugin-geolocation" spec="^2.4.3">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="EventLocation" />
+    </plugin>
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
+    <plugin name="cordova-plugin-ios-camera-permissions" spec="^1.2.0" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-camera" spec="2.4.1" />
+    <allow-navigation href="http://197.177.0.108:8100" sessionid="99a2cddb" />
+    <plugin name="cordova-plugin-compat" spec="1.2.0" />
+    <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
 </widget>

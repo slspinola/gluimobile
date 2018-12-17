@@ -6,6 +6,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -18,6 +20,7 @@ import { EventsPage } from '../pages/events/events';
 import { TaskProvider } from '../providers/task/task.service';
 import { TasksPage } from '../pages/tasks/tasks';
 import { LoginPage } from '../pages/login/login';
+import { EventProvider } from '../providers/event/event.service';
 
 const firebase = {
   apiKey: "AIzaSyBzOqQimbLuB9jX9so2tWf5XdyL1FymwnI",
@@ -60,8 +63,11 @@ const firebase = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,
     AngularFireStorage,
+    Geolocation,
+    Camera,
     AuthProvider,
-    TaskProvider
+    TaskProvider,
+    EventProvider
   ]
 })
 export class AppModule {}

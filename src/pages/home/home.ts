@@ -11,6 +11,8 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class HomePage {
 
   uid: string;
+  username: string;
+  errorMsg: string;
 
   pages = [
     { title: 'Serviços', icon:'list-box', component: TasksPage },
@@ -31,18 +33,32 @@ export class HomePage {
         this.authService.getProfile().subscribe(
           profile => {
             console.log(profile[0]);
-            this.uid = profile[0].id
-          })
+            this.uid = profile[0].id;
+            this.username = profile[0].name + ' ' + profile[0].lastname;
+          },
+          error => {
+            this.errorHandler(error);
+          }
+          )
       })
   }
 
   navigateTo(page: any): void {
     //this.navCtrl.push(TasksPage, {});
+    if(this.uid == 'undefined'){
+      this.uid = 'slsspinola'
+    }
     this.navCtrl.push(page.component, {uid: this.uid});
   }
 
   getUser(): void {
     
+  }
+
+  errorHandler(error: string): void {
+    this.errorMsg = error;
+    console.log("Event Component Error");
+    console.log(error);
   }
 
 }

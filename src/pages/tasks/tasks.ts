@@ -14,6 +14,7 @@ export class TasksPage {
 
   uid: string;
   taskList$: Observable<Service[]>;
+  taskList: Service[];
   showId: string = '';
 
   constructor(public navCtrl: NavController, 
@@ -26,7 +27,6 @@ export class TasksPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TasksPage');
-
     this.taskList$ = this.taskProvider.getServiceList();   
   }
 

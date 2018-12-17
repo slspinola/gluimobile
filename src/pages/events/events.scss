@@ -1,3 +1,30 @@
 page-events {
 
+  .image {
+    text-align: center;
+    height: 300px;
+    width: auto;
+    padding: 10px;
+  }
+  .spinner-section {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(68, 68, 68, 0.22);
+    .spinner {
+      padding-left: 35%;
+      ion-spinner * {
+        width: 108px;
+        height: 108px;
+        stroke: green;
+        fill: green;
+      }
+    }
+    .spinner-text {
+      padding: 20% 0 20% 15%;
+      color: darkgreen;
+      font-size: 17px;
+      font-weight: bold;
+    }
+  }
+
 }

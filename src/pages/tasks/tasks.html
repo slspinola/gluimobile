@@ -8,19 +8,27 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let task of taskList$ | async">
+<ng-template #loading>
+  <div class="spinner-section">
+    <div class="spinner">
+      <ion-spinner name="ios"></ion-spinner>
+    </div>
+    <div class="spinner-text">
+      Aguarde, a carregar serviços..
+    </div>
+  </div>
+  </ng-template>
+  <ion-list *ngIf="taskList$ | async as taskList; else loading">
+    <ion-item *ngFor="let task of taskList">
     <button ion-item  (click)="itemTapped($event, task)">
       <ion-icon class="done-all" *ngIf="task.state=='Terminado'" name="done-all" item-start></ion-icon>
         <ion-icon class="executing" *ngIf="task.state=='Em Execução'" name="timer" item-start></ion-icon>
         <ion-icon class="scheduled" *ngIf="task.state=='Planeado'" name="calendar" item-start></ion-icon>
         <ion-icon class="blocked" *ngIf="task.state=='Bloqueado'" name="warning" item-start></ion-icon>
       <h2>
-        {{task.type}}
-        
+        {{task.type}}        
       </h2>
       <p>{{task.description}}</p>
-     
     </button>
     <ion-grid *ngIf="showId == task.id"> 
       <ion-row>
@@ -29,17 +37,17 @@
           </ion-col>
         <ion-col>
             <button class="play" (click)="taskStarted(task)" ion-button icon-only>
-                <ion-icon name="play"></ion-icon>
+                <ion-icon name="timer"></ion-icon>
             </button>
         </ion-col>
         <ion-col>
             <button class="pause" (click)="taskStopped(task)" ion-button icon-only>
-                <ion-icon name="pause"></ion-icon>
+                <ion-icon name="calendar"></ion-icon>
             </button>
         </ion-col>
         <ion-col>
             <button class="done" (click)="taskDone(task)" ion-button icon-only>
-                <ion-icon name="checkmark-circle"></ion-icon>
+                <ion-icon name="done-all"></ion-icon>
             </button>
         </ion-col>
       </ion-row>
