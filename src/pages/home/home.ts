@@ -17,11 +17,11 @@ export class HomePage {
   pages = [
     { title: 'Serviços', icon:'list-box', component: TasksPage },
     { title: 'Ocorrências', icon:'pricetags', component: EventsPage },
-    { title: 'Recolha', icon:'trash', component: HomePage },
-    { title: 'Nivel Enchimento', icon:'pint', component: HomePage },
-    { title: 'Varredura', icon:'leaf', component: HomePage },
-    { title: 'Manutenção', icon:'construct', component: HomePage },
-    { title: 'Sarjetas', icon:'grid', component: HomePage },
+    { title: 'Recolha', icon:'trash', component: EventsPage },
+    { title: 'Outro', icon:'pint', component: EventsPage },
+    { title: 'Varredura', icon:'leaf', component: EventsPage },
+    { title: 'Manutenção', icon:'construct', component: EventsPage },
+    { title: 'Sarjetas', icon:'grid', component: EventsPage },
 
   ];
 
